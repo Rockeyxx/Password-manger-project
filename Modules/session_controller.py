@@ -48,6 +48,7 @@ class SessionController(Encryption , AccountController):
                 
     def DataEncrypation(self):# the method that contian encrypted password
         if self.DataCheck():
+            self.initialize_cipher(str(self.PassWord))
             SecretPassWord = self.encrypt(str(self.PassWord))
             return SecretPassWord
         
@@ -174,6 +175,7 @@ class SessionController(Encryption , AccountController):
             # print(f"the accound data list before encrypation : {self.AccoundData}")
 
             self.obj1 = Encryption()
+            self.obj1.initialize_cipher(self.ui.Password_LineEdit.text())
 
             self.AccoundData[2] = self.obj1.encrypt(self.PasswordItem)
 

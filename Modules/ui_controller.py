@@ -82,6 +82,7 @@ class UIController():
 
     def decrypt(self, encrypted_text):
         decrypet = Encryption()
+        decrypet.initialize_cipher(self.ui.Password_LineEdit.text())
         return decrypet.decrypt(encrypted_text)
 
     def copy_password_clicked(self):

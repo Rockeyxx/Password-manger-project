@@ -70,6 +70,11 @@ class AuthController():
 
         for user in users:
                 #user is taking from the list wich return to the main class Users that have the attrtuibe username and password 
+                try:
+                    decrypet.initialize_cipher(self.password)
+                except Exception:
+                    continue
+
                 if self.username == user.username and self.password == decrypet.decrypt(user.password):
                     self.show_mainwindow()
                     DatabaseController.update_for_tree(self)
