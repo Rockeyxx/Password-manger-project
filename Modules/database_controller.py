@@ -181,6 +181,8 @@ class DatabaseController(SessionController , AccountController):
              QtWidgets.QTableWidgetItem(self.mainwindow.tableWidget.item(row, 5)).text()
 
         sql = SqlModelManager()
+        encrypet = Encryption()
+        encrypet.initialize_cipher(self.ui.Password_LineEdit.text())
         sql.update_item(Table_widget ,{"username_key": f"{self.ui.Username_LineEdit.text().strip()}" , #search for
                                         "catagory" : f"{self.mainwindow.treeWidget.selectedItems()[0].text(0)}" ,
                                         "tag_Label":f"{self.tag}" , 
@@ -192,10 +194,10 @@ class DatabaseController(SessionController , AccountController):
                                         } , #update to
                                         {"tag_Label" : f"{self.mainwindow.tableWidget.item(selected_row, 0).text()}" ,
                                         "username":f"{self.mainwindow.tableWidget.item(selected_row, 1).text()}" ,
-                                        "password": f"{Encryption().encrypt(edited_data['password'])}",
+                                        "password": f"{encrypet.encrypt(edited_data['password'])}",
                                         "URL": f"{self.mainwindow.tableWidget.item(selected_row, 3).text()}",
                                         "note": f"{edited_data['note']}",
-                                        "privet_note": f"{Encryption().encrypt(edited_data['private_note'])}"
+                                        "privet_note": f"{encrypet.encrypt(edited_data['private_note'])}"
                                         }
                                         )
         
