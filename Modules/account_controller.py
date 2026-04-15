@@ -68,6 +68,7 @@ class AccountController():
                         #the try except beacuse if there is no password it will cause error so add the items as none
                          try:
                             encrypet = Encryption()
+                            encrypet.initialize_cipher(self.password)
                             decrypted_password = encrypet.decrypt(getattr(table_item, column_name))  # decreypt the password
                             masked_password = "•"*len(decrypted_password)  # mask it
                             
