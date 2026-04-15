@@ -69,7 +69,8 @@ class DatabaseController(SessionController , AccountController):
                 self.username = self.mainwindow.tableWidget.item(selected_row, 1).text()
                 self.password = item.password
                 self.url = self.mainwindow.tableWidget.item(selected_row, 3).text()
-                if self.tag == item.tag_Label and self.username == item.username  and self.url == item.URL and self.ui.Username_LineEdit.text() == item.username_key and self.mainwindow.treeWidget.selectedItems()[0].text(0) == item.catagory:
+                selected_items = self.mainwindow.treeWidget.selectedItems()
+                if selected_items and self.tag == item.tag_Label and self.username == item.username and self.url == item.URL and self.ui.Username_LineEdit.text() == item.username_key and selected_items[0].text(0) == item.catagory:
 
                     self.note = item.note
                     self.private_note = item.privet_note
