@@ -3,16 +3,15 @@ import sqlite3 , sqlalchemy
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Modules.login import Ui_Login 
-import Modules.Bilal
-import Modules.Hussam
+from Modules.session_controller import SessionController
 from Modules.sqlmodel_manager import SqlModelManager , Catagory,Users,Table_widget 
 from Modules.EditDialog import EditDialog2
 from Modules.Mainwindow import Ui_MainWindow 
-from Modules.Omar import OmarClass
+from Modules.account_controller import AccountController
 
   
 
-class MarwanClass(Modules.Bilal.Bilalclass , OmarClass):
+class DatabaseController(SessionController , AccountController):
     def init(self) :
         self.app = QtWidgets.QApplication(sys.argv)
         self.Login = QtWidgets.QMainWindow()
@@ -274,7 +273,7 @@ class MarwanClass(Modules.Bilal.Bilalclass , OmarClass):
 
 
 if __name__ == '__main__':
-    table_instance = MarwanClass()
+    table_instance = DatabaseController()
 
 
 

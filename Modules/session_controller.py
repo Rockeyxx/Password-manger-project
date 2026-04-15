@@ -7,10 +7,10 @@ from Modules.login import Ui_Login
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QLineEdit, QPushButton
 from Modules.Mainwindow import Ui_MainWindow
 from Modules.sqlmodel_manager import SqlModelManager,Catagory,Table_widget
-from Modules.Omar import OmarClass
+from Modules.account_controller import AccountController
 
 
-class Bilalclass(Encryption , OmarClass):
+class SessionController(Encryption , AccountController):
     def init(self):
          super().__init__()
          self.app = QtWidgets.QApplication(sys.argv)
@@ -184,7 +184,7 @@ class Bilalclass(Encryption , OmarClass):
             self.dialog.accept()
                 
 if __name__ == "__main__":
-    object1 = Bilalclass()
+    object1 = SessionController()
     object1.init()
 
     

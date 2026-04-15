@@ -5,11 +5,11 @@ from Modules.Mainwindow import Ui_MainWindow as mainwindow
 import Modules.encryption
 import Modules.sqlmodel_manager
 from Modules.sqlmodel_manager import Catagory,Users,Table_widget,SqlModelManager 
-import Modules.Marwan
+from Modules.database_controller import DatabaseController
 from os import path
 
 
-class HussamClass():
+class AuthController():
     # def __init__(self,ui) -> None:
     #     self.ui = ui
     def widjet(self):
@@ -72,7 +72,7 @@ class HussamClass():
                 #user is taking from the list wich return to the main class Users that have the attrtuibe username and password 
                 if self.username == user.username and self.password == decrypet.decrypt(user.password):
                     self.show_mainwindow()
-                    Modules.Marwan.MarwanClass.update_for_tree(self)
+                    DatabaseController.update_for_tree(self)
                     break
         else:
                      MessegeBox = QtWidgets.QMessageBox()
@@ -134,7 +134,7 @@ class HussamClass():
            
     
 if __name__ == "__main__":
-    x = HussamClass()
+    x = AuthController()
     x.starter()
     
   

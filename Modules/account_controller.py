@@ -5,8 +5,7 @@ from Modules.encryption import Encryption
 import sys
 from PyQt5 import  QtWidgets
 import  cryptography.fernet 
-#omars class
-class OmarClass():
+class AccountController():
     def init(self):
         
          self.app = QtWidgets.QApplication(sys.argv)

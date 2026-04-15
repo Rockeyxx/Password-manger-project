@@ -21,7 +21,7 @@ from Modules.encryption import Encryption
 
 
 
-class IbrahimClass():
+class UIController():
 
     def page(self):
         self.Login = QtWidgets.QMainWindow()
@@ -169,7 +169,7 @@ class IbrahimClass():
 
         
 if __name__ == "__main__":
-    x = IbrahimClass()
+    x = UIController()
     x.page()
 
 

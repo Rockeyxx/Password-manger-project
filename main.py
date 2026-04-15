@@ -11,15 +11,15 @@ Bilal hassan 2136347
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Modules import login , Mainwindow
 import Modules , sys
-from Modules import encryption as omar
-from Modules import Bilal as bilal
-from Modules import Ibrahim as ibrahim
-from Modules import Marwan as marwan
-from Modules import Hussam as hussam
+from Modules.encryption import Encryption
+from Modules.session_controller import SessionController
+from Modules.ui_controller import UIController
+from Modules.database_controller import DatabaseController
+from Modules.auth_controller import AuthController
 import Modules.sqlmodel_manager
-from Modules.Omar import OmarClass
+from Modules.account_controller import AccountController
 
-class Main(ibrahim.IbrahimClass , marwan.MarwanClass , hussam.HussamClass , omar.Encryption , OmarClass):
+class Main(UIController , DatabaseController , AuthController , Encryption , AccountController):
     def __init__(self):
         super().__init__()
         self.app = QtWidgets.QApplication(sys.argv)
