@@ -74,8 +74,9 @@ class DatabaseController(SessionController , AccountController):
                     self.note = item.note
                     self.private_note = item.privet_note
 
-            
-            self.edit_dialog = EditDialog2(self.tag, self.username, Encryption().decrypt(self.password), self.url, self.note , Encryption().decrypt(self.private_note))
+            encrypet = Encryption()
+            encrypet.initialize_cipher(self.ui.Password_LineEdit.text())
+            self.edit_dialog = EditDialog2(self.tag, self.username, encrypet.decrypt(self.password), self.url, self.note , encrypet.decrypt(self.private_note))
             result = self.edit_dialog.exec_()
 
             if result == QtWidgets.QDialog.Accepted:
