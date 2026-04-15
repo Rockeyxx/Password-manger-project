@@ -1,0 +1,112 @@
+
+*use sqlmodel
+
+*use mouduels for any opaertion 
+
+*create  a uml for each class 
+
+*use qt desginer 
+
+algrothims:
+*encryption class
+ 
+*login window 
+1- create a login ui that have : sign up btn , sign in btn 
+
+1.1- sginup : username(QlineEdit) , password(QlineEdit) (generete password if the btn cliked) and the password is hidden and (will be shown if a btn cliked ) , email(QlineEdit), ,save the data in a database called (DATABASE) all users in one table called (users) and encrypet the password  :
+
+1- encrypet the passwords in the table(بلال )
+
+2-  change the page if sighun up clicked (حسام)- if login cliked then cjeck if the user name and password in the data base 
+ 2- if correct go to main window if not show massge ("")
+
+
+sighn up page : 
+3-create new table called (Users) if not exisit in the database called (DATABASE.db) 
+3-enter the username and password into table مروان
+4- encrypet class (عمر )
+
+5- generete password : give you random password in the qline edit password (ابراهيم)
+
+
+1.2-sgin in : username(QlineEdit) , password(QlineEdit), login btn 
+
+1.2.1 - login (btn) : check if the user and the password exisit in the table(users) if exisit give him his data  
+
+*main window 
+
+2- menu bar : save(to save data in the database) save as (to save in windows) , exit btn  logout delte user 
+
+2.1 edit his code (ابراهيم
+
+2.2 exist btn ,  and logut ,and delete user : exist the program , return to login window , delete the user from users table and all of his data and shut the program ()مروان
+
+2.3 edit all files names and add return to login btn in sghin up page عمر)
+
+2.4 edit add account (بلال
+
+2.5 undo btn : if delete account pressed then undo btn will open and if cliked return the data (حسام
+
+
+3- catagories(QlistWidget) : add catgaroy(btn) , edit , remove 
+
+from login_class import SqlModelManager as ....
+
+3.1- Realtion between Users class and Catgory class (marwan 0 %): 
+link  , links between the two classes (catagory and users ) , load from Catagory class to the ui 
+
+3.2- add catogry (hussam )
+method called addCatagory  : add a new catagory and take the name from the users using a QInputDialog 
+
+3.3 edit catgory (ibrahim ):
+method calld EditCatagory : edit an exist catagory, if the catagory selected and the btn cliked, take the new catagory name in QInputDialog,  if not exist return box msg says ...
+
+3.4- remove catagory (bilal):
+method calld RemoveCatagory : remove an exist catagory, if the catagory selected and the btn cliked, if not exist return box msg says .... 
+
+3.5- sqlmodel : addusers , delete users , update users , read users (get) (omar )
+
+4- passwords accounts ui : add account , edit account , delete , copy password(without showing the password) , show password , search( by tag , user, url ) 
+
+4.1- add accounts (btn): shows a msgbox to enter  [tag/label, username,
+password, URL, note, private note] sepreated by commas and make the privet note and the password encrypted and save it in database. , make the password hiddin (بلال)
+
+4.2 - edit account , delete account : if an item selected and the btn pressed edit or delete the account depends on what cliked. edit the item selected but delete whole account. , save it in database after deleteing or editing (مروان)
+
+4.3 - copy , show password: show the password if the item selected and the btn cliked (decrypet the password and show it ) , copy the password to the clipboerd(using pyperclip) even if the password isnt appears.(ابراهيم)
+
+4.4 - shows the items in each table (link the table widget with the catagory table ) (عمر))
+
+4.5-search into the table shown by ( tag , user, url ) (حسام)(
+
+
+
+create an exe 
+
+*create a pakage for all moduels 
+ 
+
+report taskes : 
+
+umls 
+Includes a table of work distribution between the 
+team members 
+
+The report covers all aspects of the 
+project/assignment, including pictures and 
+diagrams of the implementation
+Includes detailed justifications for all design 
+choices
+
+
+Reflects on learned lessons and failed 
+experiments
+
+
+presntions 
+
+few readable text
+
+*front end gui 
+
+5- create the main program that contain the main window and the login window: responsive with any screen size 

@@ -1,0 +1,8 @@
+DATABASE.db
+Modules/master_key.key
+__pycache__/
+*.pyc
+.venv/
+*.docx
+*.pptx
+project/
